@@ -1,18 +1,17 @@
 print("Hello, my name is Alex your virtual assistant. I will help you order a pizza!")
 print("I am going to ask you a few questions. After typing an answer, press enter.")
 userName = input("\nEnter your name:  ")
-
 while len(userName) == 0: 
     userName = input("Name cannot be blank! Please enter your name: ")
-
 if userName.lower() == "victoria trevino":
     print(f"\nMy creator, {userName}. Pleasure to serve you!")
 else:
     print(f"\nHello, {userName}. Nice to meet you!")
     
+
 keepGoing = "y"
 while keepGoing.lower() == "y":
-
+    
     size = input("\nWhat size do you want? Enter small, medium, or large:  ")
     while size.lower() not in ["small" , "medium", "large"]:
         size = input("Invalid value! Please enter small, medium, or large:  ")
@@ -59,17 +58,17 @@ while keepGoing.lower() == "y":
         print("\nCongratulations! You've been awarded a $10 Off coupon for your next order.")
     else:
         print("\nOrder over $50 will receive a free $10 Off coupon!")
-
     print("-" * 10)
 
     print("Order has been received. ETA 3 mins!")
     for min in range(3, 0, -1):
         print(min, "minutes remaining")
         for seconds in range(60, 0, -1):
-            print(seconds, end = "\r")
+            print(seconds, end = "\r  ")
             import time
             time.sleep(1)
     print("Order is ready!")
+    
     keepGoing = input("Do you want to place another order? Enter y or n:  ")
 while keepGoing.lower() not in ["y", "n"]:
     keepGoing = input("Invalid Value:  Enter y or n:")
